@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
@@ -18,6 +18,13 @@ function App() {
           Learn React
         </a>
       </header>
+      <div class="container">
+        <div class="row">
+          <div className="col-xl-4">12345</div>
+          <div className="col-xl-4">12345</div>
+          <div className="col-xl-4">12345</div>
+        </div>
+      </div>
     </div>
   );
 }
