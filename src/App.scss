@@ -2,9 +2,34 @@
 
 $backgroundBlue: #0A335C;
 
+body {
+  overflow-x:hidden;
+}
 .wrap {
   height: 100vh
 }
 .wrap-dark{
   background: $backgroundBlue;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.Character {
+  white-space: pre;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 96px;
+  line-height: 112px;
+  color: #0A335C;
+}
+
+.Character-current {
+  background-color: #09d3ac;
+}
+
+.Character-out {
+  color: silver;
 }

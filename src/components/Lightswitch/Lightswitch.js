@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
 import {DarkModeContext} from '../../context/DarkModeContext';
 import Menu from '../Menu/Menu';
-// import classes from './Lightswitch/Lightswitch.module.scss';
 import classes from './Lightswitch.module.scss';
+
 function Lightswitch() {
     const {darkMode, toggleDarkMode} = useContext(DarkModeContext);
     const handleClick = () => {
