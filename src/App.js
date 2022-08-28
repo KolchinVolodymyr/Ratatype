@@ -9,19 +9,19 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 function App() {
   const {darkMode} = useContext(DarkModeContext);
-
+ 
   return (
     <div className={darkMode ? `wrap wrap-dark` : `wrap wrap-light`}>
       <React.StrictMode>
-      <Router>
-        <Header/>  
-        <Routes>  
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/service" element={<Service />} />
+        <Router>
+          <Header/>  
+          <Routes>  
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/service" element={<Service />} />
           </Routes> 
-      </Router>  
-    </React.StrictMode>
+        </Router>  
+      </React.StrictMode>
     </div>
   );
 }
