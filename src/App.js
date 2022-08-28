@@ -1,14 +1,28 @@
-import Container from './components/Container/container';
-import { DarkModeProvider } from './context/DarkModeContext';
+import React, {useContext} from 'react'; 
 import './App.scss';
+import {DarkModeContext} from './context/DarkModeContext';
+import About from './screens/About';
+import Service from './screens/Service';
+import Home from './screens/Home';
+import Header from './components/Header/header';
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 function App() {
+  const {darkMode} = useContext(DarkModeContext);
+
   return (
-    <>
-      <DarkModeProvider>
-        <Container />
-      </DarkModeProvider>
-    </>
+    <div className={darkMode ? `wrap wrap-dark` : `wrap wrap-light`}>
+      <React.StrictMode>
+      <Router>
+        <Header/>  
+        <Routes>  
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/service" element={<Service />} />
+          </Routes> 
+      </Router>  
+    </React.StrictMode>
+    </div>
   );
 }
 
