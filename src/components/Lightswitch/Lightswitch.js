@@ -5,7 +5,7 @@ import MobileMenu from '../MobileMenu/MobileMenu';
 import classes from './Lightswitch.module.scss';
 
 function Lightswitch(props) {
-    console.log('props', props);
+
     const [enableMobileMenu, setEnableMenu] = useState(false);
     const mobileMenu = () => {
         setEnableMenu(!enableMobileMenu)   
@@ -25,8 +25,14 @@ function Lightswitch(props) {
         <div className="row">
             <div className="col-xl-2 col-lg-3 col-md-3 col-sm-9 col-9">
                 {enableMobileMenu 
-                ? <img src={'./assets/logo-mobile.png'} alt="logo mobile"/>
-                : <img src={darkMode ? `./assets/logo-dark.png` : `./assets/logo-light.png`} alt="Logo"/>}
+                ? <>
+                    <img className={classes.logo_table_hide} src={darkMode ? `./assets/logo-dark.png` : `./assets/logo-dark.png`} alt="logo table"/>
+                    <img className={classes.logo_mobile} src={darkMode ? `./assets/logo-mob-light.png` : `./assets/logo-mob-light.png`} alt="logo mobile"/>
+                  </>
+                : <>
+                    <img className={classes.logo_table_hide} src={darkMode ? `./assets/logo-dark.png` : `./assets/logo-light.png`} alt="logo table"/>
+                    <img className={classes.logo_mobile} src={darkMode ? `./assets/logo-mob-light.png` : `./assets/logo-mob.png`} alt="logo mobile"/>
+                  </>}
             </div>
             <div className='col-xl-5 col-lg-6 col-md-6 col-sm-1 col-1'>
                 <Menu 
