@@ -24,7 +24,37 @@ function MobileMenu(props) {
                 <li className={splitLocation[1] === "education" ? `${classes.active}` : ""}>
                     <Link to="/education">Навчання</Link>
                 </li>
-                 
+                <li>
+                    <div className={classes.submenu}>
+                        <ul>
+                            <li>
+                                <Link to="/education">Для вчителів</Link>
+                            </li>
+                            <li>
+                                <Link to="/education">Про нас</Link>
+                            </li>
+                            <li>
+                                <Link to="/education">Рейтинг</Link>
+                            </li>
+                            <li>
+                                <Link to="/education">Допомога</Link>
+                            </li>
+                            <li>
+                                <Link to="/education">Контакти</Link>
+                            </li>
+                            <li>
+                                <Link to="/education">Підтримати проєкт</Link>
+                            </li>
+                        </ul>
+                        <div className={classes.accounMobile}>
+                            <img src={'./assets/user.png'} alt="user"/>
+                            <div className={classes.info}>
+                                <div className={classes.name}>Alex</div> 
+                                <div className={classes.rate}><img src={'./assets/gold-coin.png'} alt="gold-coin"/>35 543</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </nav>
     )
