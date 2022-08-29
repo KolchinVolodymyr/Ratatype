@@ -1,8 +1,13 @@
-import React from 'react'; 
+import React, {useState} from 'react'; 
 import classes from './Menu.module.scss';
 import {Link, useLocation} from 'react-router-dom';
 
 function Menu(props) {
+    const [enableSubMenu, setSubMenu] = useState(false);
+
+    const handleClickSubMenu = () => {
+        setSubMenu(!enableSubMenu);
+      }
     //assigning location variable
     const location = useLocation();
 
@@ -26,7 +31,20 @@ function Menu(props) {
                     <Link to="/education">Навчання</Link>
                 </li>
                 <li className={splitLocation[1] === "more" ? `${classes.active}` : ""}>
-                    <Link to="/more">Більше</Link>
+                    <a href='#' onClick={() => handleClickSubMenu()}>Більше <img src={props.darkMode ? './assets/burger-menu-dark.png': './assets/burger-menu.png' }/></a> 
+                    {enableSubMenu && 
+                    <div className={classes.submenu_desktop}>
+                        <ul>
+                            <li>Для вчителів</li>
+                            <li>Про нас</li>
+                            <li>
+                                 Рейтинг 
+                            </li>
+                            <li>Допомога</li>
+                            <li>Контакти</li>
+                            <li>Підтримати проєкт</li>
+                        </ul>
+                    </div>}
                 </li>
             </ul>
         </nav>
