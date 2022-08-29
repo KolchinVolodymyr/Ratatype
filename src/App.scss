@@ -5,18 +5,27 @@ $backgroundBlue: #0A335C;
 body {
   overflow-x:hidden;
 }
+
+ul {
+  list-style-type: none;
+}
+
 .wrap {
-  height: 100vh
+  height: 100vh;
+  overflow-x: hidden;
 }
 .wrap-dark{
   background: $backgroundBlue;
+  .character {
+    color: white;
+  }
 }
 
 .App-link {
   color: #09d3ac;
 }
 
-.Character {
+.character {
   white-space: pre;
   font-family: 'Montserrat';
   font-style: normal;
@@ -26,10 +35,17 @@ body {
   color: #0A335C;
 }
 
-.Character-current {
+.character-current {
   background-color: #09d3ac;
 }
 
-.Character-out {
+.character-out {
   color: silver;
+}
+
+.background_mobile_menu {
+  background: #00ACFF;
+  .wrap-dark {
+    background: #00ACFF;
+  }
 }

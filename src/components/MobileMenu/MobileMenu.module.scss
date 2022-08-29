@@ -1,0 +1,24 @@
+.menuMobile {
+    margin-top: 65px;
+
+    ul {
+        padding-left: 10px;
+
+        li {
+            a {
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 32px;
+                color: #FFFFFF;
+                text-decoration: none;
+                padding-bottom: 16px;
+                padding-top: 16px;
+                border-bottom: 2px solid rgba(255, 255, 255, .2);
+                display: block;
+                width: 110%;
+            }
+        }
+    }
+}

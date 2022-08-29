@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import useKeyPress from '../hooks/useKeyPress';
 import { generate } from '../utils/words';
-import { currentTime } from '../utils/time';
 const initialWords = generate();
 
 function Home() {
@@ -12,61 +11,42 @@ function Home() {
       const [currentChar, setCurrentChar] = useState(initialWords.charAt(0));
       const [incomingChars, setIncomingChars] = useState(initialWords.substr(1));
     
-      const [startTime, setStartTime] = useState();
-      const [wordCount, setWordCount] = useState(0);
-      const [wpm, setWpm] = useState(0);
-    
-      const [accuracy, setAccuracy] = useState(0);
-      const [typedChars, setTypedChars] = useState('');
-    
       useKeyPress(key => {
-        if (!startTime) {
-          setStartTime(currentTime());
-        }
-    
+        //1
         let updatedOutgoingChars = outgoingChars;
         let updatedIncomingChars = incomingChars;
+        
+        //2
         if (key === currentChar) {
+          //3
           if (leftPadding.length > 0) {
             setLeftPadding(leftPadding.substring(1));
           }
+          //4
           updatedOutgoingChars += currentChar;
           setOutgoingChars(updatedOutgoingChars);
-    
+          
+          //5      
           setCurrentChar(incomingChars.charAt(0));
-    
+          
+          //6
           updatedIncomingChars = incomingChars.substring(1);
           if (updatedIncomingChars.split(' ').length < 10) {
-            updatedIncomingChars += ' ' + generate();
+            updatedIncomingChars +=' ' + generate();
           }
           setIncomingChars(updatedIncomingChars);
-    
-          if (incomingChars.charAt(0) === ' ') {
-            setWordCount(wordCount + 1);
-            const durationInMinutes = (currentTime() - startTime) / 60000.0;
-            setWpm(((wordCount + 1) / durationInMinutes).toFixed(2));
-          }
         }
-    
-        const updatedTypedChars = typedChars + key;
-        setTypedChars(updatedTypedChars);
-        setAccuracy(
-          ((updatedOutgoingChars.length * 100) / updatedTypedChars.length).toFixed(
-            2,
-          ),
-        );
       });
     
     return (
         <section>
             <div className="container">
                 <h1>Home</h1>
-                <p className="Character">
-                    <span className="Character-out">
-                        {/* {(leftPadding + outgoingChars).slice(0)} */}
-                        <img src='/assets/Group.png' />
+                <p className="character">
+                    <span className="character-out">
+                        <img src='/assets/Group.png' alt='bird'/>
                     </span>
-                    <span className="Character-current">{currentChar}</span>
+                    <span className="character-current">{currentChar}</span>
                     <span>{incomingChars.substr(0, 40)}</span>
                 </p>
             </div>

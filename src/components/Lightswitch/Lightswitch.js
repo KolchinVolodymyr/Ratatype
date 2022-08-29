@@ -1,32 +1,61 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import {DarkModeContext} from '../../context/DarkModeContext';
 import Menu from '../Menu/Menu';
+import MobileMenu from '../MobileMenu/MobileMenu';
 import classes from './Lightswitch.module.scss';
 
 function Lightswitch() {
+    const [enableMobileMenu, setEnableMenu] = useState(false);
+    const mobileMenu = () => {
+        setEnableMenu(!enableMobileMenu)   
+        if(enableMobileMenu) {
+            document.body.classList.remove('background_mobile_menu');
+        } else {
+            document.body.classList.add('background_mobile_menu');
+        }
+        
+    }
+
     const {darkMode, toggleDarkMode} = useContext(DarkModeContext);
     const handleClick = () => {
         toggleDarkMode();
     }
     return (
         <div className="row">
-            <div className="col-xl-3">
-                <img src={darkMode ? `./assets/logo-dark.png` : `./assets/logo-light.png`} alt="Logo"/>
+            <div className="col-xl-2 col-lg-3 col-md-3 col-sm-9 col-9">
+                {enableMobileMenu 
+                ? <img src={'./assets/logo-mobile.png'} alt="logo mobile"/>
+                : <img src={darkMode ? `./assets/logo-dark.png` : `./assets/logo-light.png`} alt="Logo"/>}
             </div>
-            <div className='col-xl-4'>
-                <Menu />
-            </div>
-            <div className="col-xl-4 offset-xl-1">
-                <img src={'./assets/restart.png'} alt="restart icon"/>
-                <img src={darkMode ? `./assets/light-mode.png` : `./assets/dark-mode.png`} 
-                    alt="Lightswitch on" 
-                    onClick={handleClick}
-                />
-                <img src={'./assets/user.png'} alt="user"/>
-                <img className={classes.menuMobile} src={darkMode ? `./assets/burgermenu-dark.png` : `./assets/burgermenu.png`} 
-                    alt="mobile menu"
+            <div className='col-xl-5 col-lg-6 col-md-6 col-sm-1 col-1'>
+                <Menu 
+                    darkMode={darkMode}
                 />
             </div>
+            <div className="col-xl-2 offset-xl-3 col-lg-3 col-md-3 col-sm-2 col-2">
+                <div className={classes.actionUser}>
+                    <div className={classes.restartIcon}>
+                        <img src={'./assets/restart.png'} alt="restart icon"/>
+                    </div>
+                    <div className={classes.toogleIcon}>
+                        <img src={darkMode ? `./assets/light-mode.png` : `./assets/dark-mode.png`} 
+                            alt="Lightswitch on" 
+                            onClick={handleClick}
+                        />
+                    </div>
+                    <div className={classes.userIcon}>
+                        <img src={'./assets/user.png'} alt="user"/>
+                    </div>
+                    {enableMobileMenu 
+                        ? <img src={'./assets/burger-menu-light.png'} alt="logo mobile" onClick={mobileMenu}/>
+                        : <img className={classes.menuMobile} src={darkMode ? `./assets/burger-menu-light.png` : `./assets/burgermenu.png`} 
+                            alt="mobile menu"
+                            onClick={mobileMenu}
+                        />}
+                    
+                </div>
+            </div>
+            {enableMobileMenu && <MobileMenu />}
         </div>
     )
 }

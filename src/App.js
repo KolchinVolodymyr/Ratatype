@@ -17,8 +17,8 @@ function App() {
           <Header/>  
           <Routes>  
               <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/service" element={<Service />} />
+              <Route path="/trainer" element={<About />} />
+              <Route path="/education" element={<Service />} />
           </Routes> 
         </Router>  
       </React.StrictMode>
