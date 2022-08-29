@@ -6,3 +6,7 @@ export const generate = (count = 10) => {
     .map(_ => faker.random.word())
     .join(' ');
 };
+
+export const handleClickRestart = () => {
+  generate();
+}

@@ -4,7 +4,8 @@ import Menu from '../Menu/Menu';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import classes from './Lightswitch.module.scss';
 
-function Lightswitch() {
+function Lightswitch(props) {
+    console.log('props', props);
     const [enableMobileMenu, setEnableMenu] = useState(false);
     const mobileMenu = () => {
         setEnableMenu(!enableMobileMenu)   
@@ -35,7 +36,10 @@ function Lightswitch() {
             <div className="col-xl-2 offset-xl-3 col-lg-3 col-md-3 col-sm-2 col-2">
                 <div className={classes.actionUser}>
                     <div className={classes.restartIcon}>
-                        <img src={'./assets/restart.png'} alt="restart icon"/>
+                        <img src={'./assets/restart.png'} 
+                            alt="restart icon"
+                            onClick={() => props.handleClickRestart()}
+                        />
                     </div>
                     <div className={classes.toogleIcon}>
                         <img src={darkMode ? `./assets/light-mode.png` : `./assets/dark-mode.png`} 

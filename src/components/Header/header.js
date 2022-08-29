@@ -2,12 +2,12 @@ import React from 'react';
 import Lightswitch from '../Lightswitch/Lightswitch';
 import classes from './Header.module.scss';
 
-function Header() {
-
+function Header(props) {
+    
     return (
         <header className={classes.blockHeader}>
             <div className="container">
-                <Lightswitch />
+                <Lightswitch handleClickRestart={props.handleClickRestart}/>
             </div> 
         </header>
     )
