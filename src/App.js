@@ -25,6 +25,31 @@ function App() {
     setCurrentChar(' ');
   }
 
+  const handleChangeInput = (e) => {    
+      //1
+      let updatedOutgoingChars = outgoingChars;
+      let updatedIncomingChars = incomingChars;
+      //2
+      if (e.target.value === currentChar) {
+        //3
+        if (leftPadding.length > 0) {
+          setLeftPadding(leftPadding.substring(1));
+        }
+        //4
+        updatedOutgoingChars += currentChar;
+        setOutgoingChars(updatedOutgoingChars);
+        
+        //5      
+        setCurrentChar(incomingChars.charAt(0));
+        
+        //6
+        updatedIncomingChars = incomingChars.substring(1);
+  
+        setIncomingChars(updatedIncomingChars);
+      }
+     
+  }
+
   useKeyPress(key => {
     //1
     let updatedOutgoingChars = outgoingChars;
@@ -44,9 +69,7 @@ function App() {
       
       //6
       updatedIncomingChars = incomingChars.substring(1);
-      // if (updatedIncomingChars.split(' ').length < 10) {
-      //   updatedIncomingChars +=' ' + generate();
-      // }
+
       setIncomingChars(updatedIncomingChars);
     }
   });
@@ -58,7 +81,7 @@ function App() {
           <Header handleClickRestart={handleClickRestart}/>  
           <Routes>  
               <Route path="/" element={<Home />} />
-              <Route path="/trainer" element={<About currentChar={currentChar} incomingChars={incomingChars}/>} />
+              <Route path="/trainer" element={<About currentChar={currentChar} incomingChars={incomingChars} handleChangeInput={handleChangeInput}/>} />
               <Route path="/education" element={<Service />} />
           </Routes> 
         </Router>  

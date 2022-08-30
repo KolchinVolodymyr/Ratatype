@@ -49,3 +49,16 @@ ul {
     background: #00ACFF;
   }
 }
+.character_input {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .character_input {
+    display: block;
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    margin-top: -162px;
+    opacity: 0;
+  }
+}
