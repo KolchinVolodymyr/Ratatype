@@ -21,6 +21,16 @@ function Lightswitch(props) {
     const handleClick = () => {
         toggleDarkMode();
     }
+
+    const handleLinkSubMenu = () => {
+        setEnableMenu(!enableMobileMenu);
+        if(enableMobileMenu) {
+            document.body.classList.remove('background_mobile_menu');
+        } else {
+            document.body.classList.add('background_mobile_menu');
+        }
+    }
+
     return (
         <div className="row">
             <div className="col-xl-2 col-lg-3 col-md-3 col-sm-9 col-9">
@@ -65,7 +75,7 @@ function Lightswitch(props) {
                     
                 </div>
             </div>
-            {enableMobileMenu && <MobileMenu />}
+            {enableMobileMenu && <MobileMenu handleLinkSubMenu={handleLinkSubMenu}/>}
         </div>
     )
 }

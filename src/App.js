@@ -25,6 +25,8 @@ function App() {
     setCurrentChar(' ');
   }
 
+  //crutch
+  //data entry from a mobile device
   const handleChangeInput = (e) => {    
       //1
       let updatedOutgoingChars = outgoingChars;
@@ -50,6 +52,7 @@ function App() {
      
   }
 
+  //data entry for computers (that have a physical keyboard)
   useKeyPress(key => {
     //1
     let updatedOutgoingChars = outgoingChars;

@@ -3,6 +3,7 @@ import classes from './MobileMenu.module.scss';
 import {Link, useLocation} from 'react-router-dom';
 
 function MobileMenu(props) {
+    
     //assigning location variable
     const location = useLocation();
 
@@ -14,7 +15,7 @@ function MobileMenu(props) {
 
     return (
         <nav className={classes.menuMobile}>
-            <ul>
+            <ul onClick={() => props.handleLinkSubMenu()}>
                 <li className={splitLocation[1] === "trainer" ? `${classes.active}` : ""}>
                     <Link to='/trainer'>Тренажер</Link>
                 </li>
