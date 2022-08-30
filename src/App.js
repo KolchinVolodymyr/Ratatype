@@ -1,8 +1,8 @@
 import React, {useContext, useState} from 'react'; 
 import './App.scss';
 import {DarkModeContext} from './context/DarkModeContext';
-import About from './screens/About';
-import Service from './screens/Service';
+import Trainer from './screens/Trainer';
+import Education from './screens/Education';
 import Home from './screens/Home';
 import Header from './components/Header/header';
 import Footer from './components/Footer/Footer';
@@ -85,8 +85,8 @@ function App() {
           <Header handleClickRestart={handleClickRestart}/>  
           <Routes>  
               <Route path="/" element={<Home />} />
-              <Route path="/trainer" element={<About currentChar={currentChar} incomingChars={incomingChars} handleChangeInput={handleChangeInput}/>} />
-              <Route path="/education" element={<Service />} />
+              <Route path="/trainer" element={<Trainer currentChar={currentChar} incomingChars={incomingChars} handleChangeInput={handleChangeInput}/>} />
+              <Route path="/education" element={<Education />} />
           </Routes> 
           <Footer handleClickRestart={handleClickRestart}/>
         </Router>  
