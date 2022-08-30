@@ -5,7 +5,7 @@ function Home() {
     return (
         <section>
             <div className="container">
-                <h1>Home page</h1>
+                <h1 className='character'>Home page</h1>
             </div>
         </section>
     )
