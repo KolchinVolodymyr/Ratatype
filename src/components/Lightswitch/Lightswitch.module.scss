@@ -42,6 +42,13 @@
   display: none;
 }
 
+.burgerMenuMobile {
+  display: none;
+}
+
+.burgerMenuTabled {
+  display: block;
+}
 @media screen and (max-width: 450px) {
   .logo_table_hide {
     display: none;
@@ -49,4 +56,11 @@
   .logo_mobile {
     display: block;
   }
+  .burgerMenuTabled {
+    display: none;
+  }
+  .burgerMenuMobile {
+    display: block;
+  }
+  
 }

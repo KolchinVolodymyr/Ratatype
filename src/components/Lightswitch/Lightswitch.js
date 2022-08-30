@@ -67,11 +67,14 @@ function Lightswitch(props) {
                         <img src={'./assets/user.png'} alt="user"/>
                     </div>
                     {enableMobileMenu 
-                        ? <img src={'./assets/burger-menu-light.png'} alt="logo mobile" onClick={mobileMenu}/>
+                        ? <>
+                            <img className={classes.burgerMenuTabled} src={'./assets/burger-menu-light.png'} alt="logo mobile" onClick={mobileMenu}/>
+                            <img className={classes.burgerMenuMobile} src={'./assets/burger-menu-close.png'} alt="logo mobile close" onClick={mobileMenu}/>
+                        </>
                         : <img className={classes.menuMobile} src={darkMode ? `./assets/burger-menu-light.png` : `./assets/burgermenu.png`} 
                             alt="mobile menu"
-                            onClick={mobileMenu}
-                        />}
+                            onClick={mobileMenu}/>
+                        }
                     
                 </div>
             </div>
