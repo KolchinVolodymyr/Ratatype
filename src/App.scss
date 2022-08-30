@@ -48,6 +48,9 @@ ul {
   .wrap-dark {
     background: #00ACFF;
   }
+  footer, section {
+    display: none;
+  }
 }
 .character_input {
   display: none;
