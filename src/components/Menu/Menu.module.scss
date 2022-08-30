@@ -1,0 +1,96 @@
+.menuMobile {
+    display: none;
+}
+ 
+.menuDesktop {
+  ul {
+    display: flex;
+    
+    li {
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      // margin-right: 20px;
+
+      a {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        text-decoration: none;
+        opacity: 0.64;
+      }
+      &:hover {
+        border-radius: 8px;
+      }
+    }
+
+    .active {
+      a {
+        opacity: 1;
+      }
+    } 
+  }  
+}
+.menuDesktoplight {
+  li {
+    a {
+      color: #0A335C;
+    }
+    &:hover {
+      background: #F3F5F7;
+    }
+  }
+}
+
+.menuDesktopDark {
+  li {
+    a {
+      color: #fff;
+    } 
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+    .menuDesktop {
+      display: none;
+    }
+    .menuMobile {
+      display: block;
+    }
+}
+.submenu_desktop {
+  position: absolute; 
+  width: 205px;
+  top: 56px;
+  /* white */
+  background: #FFFFFF;
+  /* solitude */
+  margin-top: 10px;
+  margin-left: -8px;
+  border: 1px solid #E6EBEF;
+  border-radius: 8px;
+  ul {
+    flex-direction: column;
+    padding-left: 0px;
+    li {
+      margin-right: 0px;
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      color: #0A335C;
+      opacity: 0.64;
+
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.blockFooter {
+    display: none;
+}
+
+.actionUserFooter {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    .restartIcon {
+        margin-right: 20px;
+    }
+}
+@media screen and (max-width: 450px) {
+    .blockFooter {
+        display: block;
+    }
+}

@@ -1,0 +1,67 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+$backgroundBlue: #0A335C;
+
+body {
+  overflow-x:hidden;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.wrap {
+  height: 100vh;
+  overflow-x: hidden;
+}
+.wrap-dark{
+  background: $backgroundBlue;
+  .character {
+    color: white;
+  }
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.character {
+  white-space: pre;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 96px;
+  line-height: 112px;
+  color: #0A335C;
+}
+
+.character-current {
+  border: 1px solid #0A335C;
+}
+
+.character-out {
+  color: silver;
+}
+
+.background_mobile_menu {
+  background: #00ACFF;
+  .wrap-dark {
+    background: #00ACFF;
+  }
+  footer, section {
+    display: none;
+  }
+}
+.character_input {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .character_input {
+    display: block;
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    margin-top: -162px;
+    opacity: 0;
+  }
+}
