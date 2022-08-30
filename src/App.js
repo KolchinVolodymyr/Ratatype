@@ -5,6 +5,7 @@ import About from './screens/About';
 import Service from './screens/Service';
 import Home from './screens/Home';
 import Header from './components/Header/header';
+import Footer from './components/Footer/Footer';
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import useKeyPress from './hooks/useKeyPress';
 import { generate } from './utils/words';
@@ -87,6 +88,7 @@ function App() {
               <Route path="/trainer" element={<About currentChar={currentChar} incomingChars={incomingChars} handleChangeInput={handleChangeInput}/>} />
               <Route path="/education" element={<Service />} />
           </Routes> 
+          <Footer handleClickRestart={handleClickRestart}/>
         </Router>  
       </React.StrictMode>
     </div>

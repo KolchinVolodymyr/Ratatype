@@ -7,7 +7,7 @@ function Menu(props) {
 
     const handleClickSubMenu = () => {
         setSubMenu(!enableSubMenu);
-    }
+    }    
     //assigning location variable
     const location = useLocation();
 
